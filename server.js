@@ -39,12 +39,26 @@ app.post("/search", (req, res) => {
     .then(() => {
       // Read the matching questions from the folder and send them as response
       const files = fs.readdirSync(matchingQuestionsFolder);
-      const results = files.map((file) => ({
-        filename: file,
-        content: JSON.parse(
-          fs.readFileSync(path.join(matchingQuestionsFolder, file), "utf-8")
-        ),
-      }));
+      const results = files
+        .map((file) => {
+          try {
+            const filePath = path.join(matchingQuestionsFolder, file);
+            const content = fs.readFileSync(filePath, "utf-8");
+
+            if (!content) {
+              throw new Error(`File ${file} is empty`);
+            }
+
+            return {
+              filename: file,
+              content: JSON.parse(content),
+            };
+          } catch (error) {
+            console.error(`Error parsing JSON in file ${file}:`, error.message);
+            return null; // Return null for empty or malformed JSON
+          }
+        })
+        .filter((result) => result !== null); // Filter out null results
       res.json(results);
     })
     .catch((error) => {

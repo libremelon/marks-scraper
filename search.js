@@ -61,10 +61,7 @@ async function searchQuestions(subject, keywords, matchingQuestionsFolder) {
             questionDetails &&
             questionDetails.data.question.text.includes(keywords)
           ) {
-            // Debug log to check matching questions
-            console.log(`Matching question found: ${questionId}`);
-
-            // Save the matching question details to a file
+            // Save the matching question details to a file synchronously
             const fileName = path.join(
               matchingQuestionsFolder,
               `matching_questions_${subject}_${chapter.title}.json`.replace(
@@ -72,19 +69,17 @@ async function searchQuestions(subject, keywords, matchingQuestionsFolder) {
                 "_"
               )
             );
-            fs.writeFile(
-              fileName,
-              JSON.stringify(questionDetails, null, 2),
-              (err) => {
-                if (err) {
-                  console.error("Error writing to file:", err);
-                } else {
-                  console.log(
-                    `Matching question details have been saved to ${fileName}`
-                  );
-                }
-              }
-            );
+            try {
+              fs.writeFileSync(
+                fileName,
+                JSON.stringify(questionDetails, null, 2)
+              );
+              console.log(
+                `Matching question details have been saved to ${fileName}`
+              );
+            } catch (err) {
+              console.error("Error writing to file:", err);
+            }
           }
           progressBar.increment(); // Update the progress bar
         })
