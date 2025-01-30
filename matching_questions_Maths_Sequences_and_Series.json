@@ -1,0 +1,92 @@
+{
+  "success": true,
+  "message": "Fetched question.",
+  "data": {
+    "showTimer": true,
+    "showAttemptInsight": true,
+    "playSounds": true,
+    "dontShowCorrectAnswerImmediately": false,
+    "_id": "66446744970e6e9ab542d1c1",
+    "type": "numerical",
+    "level": 3,
+    "category": null,
+    "approximateTimeRequired": 240,
+    "imageBaseUrl": null,
+    "helperText": null,
+    "source": "NTA",
+    "classes": [],
+    "exams": [
+      "615d76b2c52ffa3c944600df"
+    ],
+    "subjects": [
+      "615d70e621450b3f267390c8"
+    ],
+    "chapters": [
+      "615d6fef2b295b085ab6ebcf"
+    ],
+    "topics": [],
+    "concepts": [],
+    "microConcepts": [],
+    "questionLabels": [],
+    "previousYearPapers": [
+      {
+        "_id": "664466ef278297dee60eda6e",
+        "title": "JEE Main 2024 (08 Apr Shift 1)",
+        "isVisible": true
+      }
+    ],
+    "question": {
+      "text": "Let the positive integers be written in the form :\n<img src=\"https://cdn-question-pool.getmarks.app/pyq/jee_main/swzd3iPlVE6VC8HzgThfej6f0P9tj4skKl_HIny6prY.original.fullsize.png\"><br />If the $k^{\\text {th }}$ row contains exactly $k$ numbers for every natural number $k$, then the row in which the number 5310 will be, is _______",
+      "image": null
+    },
+    "options": [],
+    "correctValue": "103",
+    "solution": {
+      "text": "$\\begin{aligned} & \\mathrm{S}=1+2+4+7+\\ldots \\ldots+\\mathrm{T}_{\\mathrm{n}} \\\\ & \\mathrm{S}=1+2+4+\\ldots \\ldots \\\\ & \\mathrm{Tn}=1+1+2+3+\\ldots \\ldots+\\left(\\mathrm{T}_{\\mathrm{n}}-\\mathrm{T}_{\\mathrm{n}-1}\\right) \\\\ & \\mathrm{T}_{\\mathrm{n}}=1+\\left(\\frac{\\mathrm{n}-1}{2}\\right)[2+(\\mathrm{n}-2) \\times 1] \\\\ & \\mathrm{T}_{\\mathrm{n}}=1+1+\\frac{\\mathrm{n}(\\mathrm{n}-1)}{2} \\\\ & \\mathrm{n}=100 \\quad \\mathrm{~T}_{\\mathrm{n}}=1+\\frac{100 \\times 99}{2}=4950+1 \\\\ & \\mathrm{n}=101 \\quad \\mathrm{~T}_{\\mathrm{n}}=1+\\frac{101 \\times 100}{2}=5050+1=5051 \\\\ & \\mathrm{n}=102 \\quad \\mathrm{~T}_{\\mathrm{n}}=1+\\frac{102 \\times 101}{2}=5151+1=5152 \\\\ & \\mathrm{n}=103 \\quad \\mathrm{~T}_{\\mathrm{n}}=1+\\frac{103 \\times 102}{2}=5254 \\\\ & \\mathrm{n}=104 \\quad \\mathrm{~T}_{\\mathrm{n}}=1+\\frac{104 \\times 103}{2}=5357\\end{aligned}$",
+      "image": null
+    },
+    "videoSolution": null,
+    "masterId": "MOGJMPYQ36434280",
+    "syllabusStatus": "No Change",
+    "numericalLowerLimit": 103,
+    "numericalUpperLimit": 103,
+    "bucket": "Tough Ques (JEE Adv)",
+    "isRemoved": false,
+    "cpyqbSubjects": [
+      "61964fa4a5a526011886801f",
+      "61c05603e8ce0dc8a5c62d35",
+      "616057860283de43c87e3e1d",
+      "61965002a5a5260118868023",
+      "6160570c0283de43c87e3e17",
+      "629f39e4ac11b26562e0625d",
+      "61bb58351213731910ea0b72",
+      "62962075e7f8e9ac4daeafd9",
+      "615f0d109476412f48314dad",
+      "61964fcda5a5260118868020",
+      "61a8a2d5e8ce0dc8a5c62d2f",
+      "629105adee9e3ae00d63352d",
+      "629f385f263330a77be9fa7f",
+      "678ea9a09cc79e5f592bdc13"
+    ],
+    "cpyqbChapters": [
+      "61964ccd97f0d204ce932ca0",
+      "61c089ac91662ead8f480b34",
+      "61bb82257544c412f7c9ce67",
+      "61964ccf2af5453a2f5c534f",
+      "61964cd27e4f983047d18a96",
+      "6160252e5b3a23bed752224f",
+      "61e7bd7cb79820319dd593c4",
+      "6160252d532b5c23dd8d7e92",
+      "629109e76ac7d5971640f866",
+      "6160252c346c448f79dc5299",
+      "6296211e26c0f7b6e124ef74",
+      "629f3a8daeac885277a492b2",
+      "629f39083336f1418ccc10f0",
+      "67921d9f1d5b5072da5e9c95"
+    ],
+    "cpyqbExams": [
+      "615f0e999476412f48314daf",
+      "616059af0283de43c87e3e23"
+    ]
+  }
+}
