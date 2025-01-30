@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question Search</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Question Search</h1>
+      <form id="searchForm">
+        <label for="subject">Subject:</label>
+        <select id="subject">
+          <option value="Physics">Physics</option>
+          <option value="Chemistry">Chemistry</option>
+          <option value="Maths">Maths</option>
+        </select>
+        <label for="keywords">Keywords:</label>
+        <input type="text" id="keywords" placeholder="Enter keywords" />
+        <button type="submit">Search</button>
+      </form>
+      <div id="results"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
