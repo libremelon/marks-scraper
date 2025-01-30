@@ -61,6 +61,9 @@ async function searchQuestions(subject, keywords, matchingQuestionsFolder) {
             questionDetails &&
             questionDetails.data.question.text.includes(keywords)
           ) {
+            // Debug log to check matching questions
+            console.log(`Matching question found: ${questionId}`);
+
             // Save the matching question details to a file
             const fileName = path.join(
               matchingQuestionsFolder,
