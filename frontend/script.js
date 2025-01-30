@@ -19,8 +19,24 @@ document
       });
 
       const data = await response.json();
-      resultsDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+      console.log(data);
+      const html = data
+        .map((element) => {
+          const q_id = element.content.data._id;
+          const q_year = element.content.data.previousYearPapers
+            .map((e, i) => {
+              return `${i + 1}. ${e.title}`;
+            })
+            .join(" / ");
+          console.log(q_year);
+          const url = `https://web.getmarks.app/cpyqb/question/${q_id}`;
+          const html = `<pre><a href="${url}">${q_year}</a></pre>`;
+          return html;
+        })
+        .join("\n");
+
+      resultsDiv.innerHTML = html;
     } catch (error) {
-      resultsDiv.innerHTML = "An error occurred while searching.";
+      resultsDiv.innerHTML = `${error}`;
     }
   });
