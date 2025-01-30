@@ -1,5 +1,5 @@
 const readline = require("readline");
-const { loadCache, saveCache } = require("./cache");
+const { loadCache, saveCache, countCachedQuestions } = require("./cache");
 const { searchQuestions } = require("./search");
 const fs = require("fs");
 const path = require("path");
@@ -15,6 +15,9 @@ fs.mkdirSync(matchingQuestionsFolder);
 
 // Load the cache at the start
 loadCache();
+
+// Display the number of cached questions
+console.log(`Number of cached questions: ${countCachedQuestions()}`);
 
 // Save the cache on exit
 process.on("exit", saveCache);

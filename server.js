@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const { searchQuestions } = require("./search");
+const { loadCache, saveCache, countCachedQuestions } = require("./cache");
 const fs = require("fs");
 const app = express();
 const port = 3000;
@@ -9,6 +10,18 @@ const port = 3000;
 // Middleware
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "frontend")));
+
+// Load the cache at the start
+loadCache();
+console.log(`Number of cached questions: ${countCachedQuestions()}`);
+
+// Save the cache on exit
+process.on("exit", saveCache);
+process.on("SIGINT", () => {
+  console.log("Received SIGINT. Saving cache...");
+  saveCache();
+  process.exit();
+});
 
 // Endpoint to handle search requests
 app.post("/search", (req, res) => {
