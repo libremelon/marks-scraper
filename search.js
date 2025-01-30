@@ -3,8 +3,9 @@ const fs = require("fs");
 const { apiKey, baseUrl } = require("./config");
 const axios = require("axios");
 const cliProgress = require("cli-progress");
+const path = require("path");
 
-async function searchQuestions(subject, keywords) {
+async function searchQuestions(subject, keywords, matchingQuestionsFolder) {
   const pLimit = await import("p-limit"); // Dynamic import of p-limit
   const limit = pLimit.default(5); // Limit the number of concurrent requests to 5
 
@@ -61,11 +62,13 @@ async function searchQuestions(subject, keywords) {
             questionDetails.data.question.text.includes(keywords)
           ) {
             // Save the matching question details to a file
-            const fileName =
+            const fileName = path.join(
+              matchingQuestionsFolder,
               `matching_questions_${subject}_${chapter.title}.json`.replace(
                 /\s+/g,
                 "_"
-              );
+              )
+            );
             fs.writeFile(
               fileName,
               JSON.stringify(questionDetails, null, 2),
