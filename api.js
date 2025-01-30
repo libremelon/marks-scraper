@@ -18,9 +18,9 @@ async function listChapters(subject) {
   let chapters = cache.get(cacheKey);
 
   if (chapters) {
-    console.log(`Cache hit: ${cacheKey}`);
+    // console.log(`Cache hit: ${cacheKey}`);
   } else {
-    console.log(`Cache miss: ${cacheKey}. Fetching from API...`);
+    // console.log(`Cache miss: ${cacheKey}. Fetching from API...`);
     try {
       const response = await axios.get(
         `${baseUrl}/subjects/${subjectCode}/chapters?limit=1000`,
@@ -52,9 +52,9 @@ async function fetchQuestionDetails(questionId) {
   let questionDetails = cache.get(cacheKey);
 
   if (questionDetails) {
-    console.log(`Cache hit: ${cacheKey}`);
+    // console.log(`Cache hit: ${cacheKey}`);
   } else {
-    console.log(`Cache miss: ${cacheKey}. Fetching from API...`);
+    // console.log(`Cache miss: ${cacheKey}. Fetching from API...`);
     const questionBaseUrl = "https://web.getmarks.app/api/v2/questions"; // Base URL for question details
 
     async function retryRequest(retries, delay) {
