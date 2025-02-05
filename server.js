@@ -5,7 +5,8 @@ const { searchQuestions } = require("./search");
 const { loadCache, saveCache, countCachedQuestions } = require("./cache");
 const fs = require("fs");
 const app = express();
-const port = 3000;
+require("dotenv").config();
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.json());
